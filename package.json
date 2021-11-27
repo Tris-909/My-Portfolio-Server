@@ -1,0 +1,31 @@
+{
+  "name": "my-portfolio-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon ./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tris-909/My-Portfolio-Server.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tris-909/My-Portfolio-Server/issues"
+  },
+  "homepage": "https://github.com/Tris-909/My-Portfolio-Server#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "nodemailer": "^6.7.2",
+    "nodemailer-smtp-transport": "^2.7.4"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "engines": {
+    "node": "16.13.0"
+  }
+}
