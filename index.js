@@ -12,7 +12,7 @@ const app = express()
 const port =  PORT || 5000;
 
 app.post('/sendMessage', (req, res) => {
-    const { email, message } = req.query;
+    const { name, email, message } = req.query;
 
     const transporter = nodemailer.createTransport(smtpTransport({
         service: 'gmail',
@@ -30,10 +30,11 @@ app.post('/sendMessage', (req, res) => {
         text: `
         Email: ${email}
 
+        Name: ${name}
+
         Message: ${message}
         `
     };
-      
       transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
           console.log(error);
