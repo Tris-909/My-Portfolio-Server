@@ -4,14 +4,12 @@ const smtpTransport = require('nodemailer-smtp-transport');
 require('dotenv').config();
 
 // Env Variables
-const ENV = process.env.ENV;
+const PORT = process.env.PORT;
 const MY_GMAIL = process.env.MY_GMAIL;
 const MY_GMAIL_PASSWORD = process.env.MY_GMAIL_PASSWORD;
-const LOCAL_URL = process.env.LOCAL_URL;
-const PROD_URL = process.env.PROD_URL;
 
 const app = express()
-const port =  ENV === 'dev' ? LOCAL_URL : PROD_URL;
+const port =  PORT || 5000;
 
 app.post('/sendMessage', (req, res) => {
     const { email, message } = req.query;
@@ -48,5 +46,5 @@ app.post('/sendMessage', (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening at${port}`)
+  console.log(`Example app listening at ${port}`)
 })
