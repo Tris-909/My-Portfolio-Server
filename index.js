@@ -12,9 +12,7 @@ const MY_GMAIL_PASSWORD = process.env.MY_GMAIL_PASSWORD;
 const app = express()
 const port =  PORT || 5000;
 
-app.use(cors({
-  origin: ['https://tranminhtri.com/', 'http://localhost:3000/']
-}));
+app.use(cors());
 
 app.post('/sendMessage', (req, res) => {
     const { name, email, message } = req.query;
