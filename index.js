@@ -1,6 +1,7 @@
 const express = require('express')
 const nodemailer = require('nodemailer');
 const smtpTransport = require('nodemailer-smtp-transport');
+const cors = require('cors');
 require('dotenv').config();
 
 // Env Variables
@@ -10,6 +11,10 @@ const MY_GMAIL_PASSWORD = process.env.MY_GMAIL_PASSWORD;
 
 const app = express()
 const port =  PORT || 5000;
+
+app.use(cors({
+  origin: ['https://tranminhtri.com/', 'http://localhost:3000/']
+}));
 
 app.post('/sendMessage', (req, res) => {
     const { name, email, message } = req.query;
